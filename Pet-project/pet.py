@@ -47,8 +47,8 @@ class CuddlyPet(Pet):
             other_pet.get_love()
 
 class AgressivePup(Pet):
-    def __init__(self, name, fullness=20, hunger=3, cuddle_level=1):
-        super().__init__(name, fullness, 20, hunger, 1)
+    def __init__(self, name, fullness=20, hunger=20, cuddle_level=1):
+        super().__init__(name, fullness, 20, hunger, 20)
         self.cuddle_level = cuddle_level
 
     def be_alive(self):

@@ -1,13 +1,21 @@
 from pet import Pet, CuddlyPet, AgressivePup
 from toy import Toy
+from subprocess import call 
+import os
 
+def clear(): 
+    call('clear' if os.name =='posix' else 'cls') 
 
+playing = True
+clear()
+
+##############################
 pets = []
 
 adoption_menu = [
     "Pet",
     "Cuddly Pet",
-    "Aggressive Pup"
+    "Anxiety Pup"
 ]
 
 main_menu = [   
@@ -44,7 +52,7 @@ def get_user_choice(choice_list):
             print_menu_error()
     return choice
 
-def main():    
+def main():
     while True:
         choice = get_user_choice(main_menu)
         if choice == 1:
