@@ -1,4 +1,4 @@
-from pet import Pet, CuddlyPet
+from pet import Pet, CuddlyPet, AgressivePup
 from toy import Toy
 
 
@@ -6,7 +6,8 @@ pets = []
 
 adoption_menu = [
     "Pet",
-    "Cuddly Pet"
+    "Cuddly Pet",
+    "Aggressive Pup"
 ]
 
 main_menu = [   
@@ -16,6 +17,7 @@ main_menu = [
     "View status of pets",
     "Give a toy to all your pets",
     "Do nothing",
+    "To Exit",
 ]
 
 def print_menu_error():
@@ -53,6 +55,8 @@ def main():
                 pets.append(Pet(pet_name))
             elif type_choice == 2:
                 pets.append(CuddlyPet(pet_name))
+            elif type_choice == 3:
+                pets.append(AgressivePup(pet_name))
             print("You now have %d pets" % len(pets))
         if choice == 2:
             for pet in pets:
@@ -67,8 +71,10 @@ def main():
             for pet in pets:
                 pet.get_toy(Toy())
         if choice == 6:
-            # Pet levels naturally lower.
             for pet in pets:
                 pet.be_alive()
+        if choice == 7:
+            print("Thank you for playing!")
+            break
 
 main()
